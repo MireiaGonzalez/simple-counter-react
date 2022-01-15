@@ -1,24 +1,55 @@
 import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import Box from "./Box.jsx";
 
 //create your first component
 const Home = () => {
 	return (
-		<div>
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div id="content">
+			<div className="container-fluid d-flex flex-row">
+				<Box icon={<i class="far fa-clock inside-box"></i>} />
+				<Box
+					insideBox={
+						<h1 id="num6" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+				<Box
+					insideBox={
+						<h1 id="num5" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+				<Box
+					insideBox={
+						<h1 id="num4" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+				<Box
+					insideBox={
+						<h1 id="num3" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+				<Box
+					insideBox={
+						<h1 id="num2" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+				<Box
+					insideBox={
+						<h1 id="num1" className="inside-box">
+							0
+						</h1>
+					}
+				/>
+			</div>
 		</div>
 	);
 };
