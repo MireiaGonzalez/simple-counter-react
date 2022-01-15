@@ -1,13 +1,17 @@
 import React from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 const Box = (props) => {
 	return (
 		<div id="box">
 			<span>{props.icon}</span>
-			<h1>{props.insideBox}</h1>
+			<h1>{props.seconds}</h1>
 		</div>
 	);
+};
+
+Box.propTypes = {
+	seconds: propTypes.number,
 };
 
 export default Box;
