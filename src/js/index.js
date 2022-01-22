@@ -12,7 +12,7 @@ import Home from "./component/home.jsx";
 ReactDOM.render(<Home />, document.querySelector("#app"));
 
 //Timer
-let counterNumbers = 99998;
+let counterNumbers = 0;
 let counter = [0, 0, 0, 0, 0];
 
 const simpleCounter = () => {
