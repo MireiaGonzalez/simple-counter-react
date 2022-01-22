@@ -12,70 +12,64 @@ import Home from "./component/home.jsx";
 ReactDOM.render(<Home />, document.querySelector("#app"));
 
 //Timer
-let counter = 0;
+let counterNumbers = 99998;
+let counter = [0, 0, 0, 0, 0];
 
 const simpleCounter = () => {
-	const num1 = document.querySelector("#num1");
-	const num2 = document.querySelector("#num2");
-	const num3 = document.querySelector("#num3");
-	const num4 = document.querySelector("#num4");
-	const num5 = document.querySelector("#num5");
-	const num6 = document.querySelector("#num6");
-	if (String(counter).length === 1) {
-		num1.innerHTML = counter;
-		counter++;
-	} else if (String(counter).length === 2) {
-		let splitStr = String(counter).split("");
-		console.log(splitStr);
-		num1.innerHTML = splitStr[1];
-		num2.innerHTML = splitStr[0];
-		counter++;
-	} else if (String(counter).length === 3) {
-		let splitStr = String(counter).split("");
-		console.log(splitStr);
-		num1.innerHTML = splitStr[2];
-		num2.innerHTML = splitStr[1];
-		num3.innerHTML = splitStr[0];
-		counter++;
-	} else if (String(counter).length === 4) {
-		let splitStr = String(counter).split("");
-		console.log(splitStr);
-		num1.innerHTML = splitStr[3];
-		num2.innerHTML = splitStr[2];
-		num3.innerHTML = splitStr[1];
-		num4.innerHTML = splitStr[0];
-		counter++;
-	} else if (String(counter).length === 5) {
-		let splitStr = String(counter).split("");
-		console.log(splitStr);
-		num1.innerHTML = splitStr[4];
-		num2.innerHTML = splitStr[3];
-		num3.innerHTML = splitStr[2];
-		num4.innerHTML = splitStr[1];
-		num5.innerHTML = splitStr[0];
-		counter++;
+	console.log(counter);
+	console.log(counterNumbers);
+	if (counterNumbers < 10) {
+		let splitCount = String(counterNumbers).split("");
+		counter[4] = splitCount[0];
+		counterNumbers++;
+	} else if (counterNumbers >= 10 && counterNumbers < 100) {
+		let splitCount = String(counterNumbers).split("");
+		counter[3] = splitCount[0];
+		counter[4] = splitCount[1];
+		counterNumbers++;
+	} else if (counterNumbers >= 100 && counterNumbers < 1000) {
+		let splitCount = String(counterNumbers).split("");
+		console.log(splitCount);
+		counter[2] = splitCount[0];
+		counter[3] = splitCount[1];
+		counter[4] = splitCount[2];
+		counterNumbers++;
+	} else if (counterNumbers >= 1000 && counterNumbers < 10000) {
+		let splitCount = String(counterNumbers).split("");
+		console.log(splitCount);
+		counter[1] = splitCount[0];
+		counter[2] = splitCount[1];
+		counter[3] = splitCount[2];
+		counter[4] = splitCount[3];
+		counterNumbers++;
+	} else if (counterNumbers >= 10000 && counterNumbers < 100000) {
+		let splitCount = String(counterNumbers).split("");
+		console.log(splitCount);
+		counter[0] = splitCount[0];
+		counter[1] = splitCount[1];
+		counter[2] = splitCount[2];
+		counter[3] = splitCount[3];
+		counter[4] = splitCount[4];
+		counterNumbers++;
 	} else {
-		let splitStr = String(counter).split("");
-		console.log(splitStr);
-		num1.innerHTML = splitStr[5];
-		num2.innerHTML = splitStr[4];
-		num3.innerHTML = splitStr[3];
-		num4.innerHTML = splitStr[2];
-		num5.innerHTML = splitStr[1];
-		num6.innerHTML = splitStr[0];
-		counter++;
-	}
-	if (counter === 1000001) {
-		counter = 0;
-		num2.innerHTML = 0;
-		num3.innerHTML = 0;
-		num4.innerHTML = 0;
-		num5.innerHTML = 0;
-		num6.innerHTML = 0;
+		counter[0] = 0;
+		counter[1] = 0;
+		counter[2] = 0;
+		counter[3] = 0;
+		counter[4] = 0;
+		counterNumbers = 1;
 	}
 };
-
 window.onload = setInterval(() => {
 	simpleCounter();
-	ReactDOM.render(<Home />, document.querySelector("#app"));
+	ReactDOM.render(
+		<Home
+			seconds5={counter[4]}
+			seconds4={counter[3]}
+			seconds3={counter[2]}
+			seconds2={counter[1]}
+			seconds1={counter[0]}
+		/>,
+		document.querySelector("#app")
+	);
 }, 1000);

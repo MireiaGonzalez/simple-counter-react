@@ -1,13 +1,13 @@
 #content{
     height: 20rem;
     background-color: black;
-    padding: 2%;
+    padding: 2rem;
 }
 
-#box{
+.box{
     background-color: rgb(73, 73, 73);
     height: 15rem;
-    width: 15rem;
+    width: 13rem;
     margin: 1em;
     border-radius: 5%;
     border: 1px solid gray;

@@ -1,54 +1,34 @@
 import React from "react";
-import Box from "./Box.jsx";
+import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 //create your first component
-const Home = () => {
+const Home = (props) => {
 	return (
 		<div id="content">
-			<div className="container-fluid d-flex flex-row">
-				<Box icon={<i class="far fa-clock inside-box"></i>} />
-				<Box
-					seconds={
-						<h1 id="num6" className="inside-box">
-							0
-						</h1>
-					}
-				/>
-				<Box
-					seconds={
-						<h1 id="num5" className="inside-box">
-							0
-						</h1>
-					}
-				/>
-				<Box
-					seconds={
-						<h1 id="num4" className="inside-box">
-							0
-						</h1>
-					}
-				/>
-				<Box
-					seconds={
-						<h1 id="num3" className="inside-box">
-							0
-						</h1>
-					}
-				/>
-				<Box
-					seconds={
-						<h1 id="num2" className="inside-box">
-							0
-						</h1>
-					}
-				/>
-				<Box
-					seconds={
-						<h1 id="num1" className="inside-box">
-							0
-						</h1>
-					}
-				/>
+			<div className="container-fluid">
+				<div id="all-boxes" className="d-flex flex-row">
+					<div id="box1" className="box">
+						<span>
+							<i className="far fa-clock inside-box"></i>
+						</span>
+					</div>
+					<div id="box2" className="box">
+						<h1 className="inside-box">{props.seconds1}</h1>
+					</div>
+					<div id="box3" className="box">
+						<h1 className="inside-box">{props.seconds2}</h1>
+					</div>
+					<div id="box4" className="box">
+						<h1 className="inside-box">{props.seconds3}</h1>
+					</div>
+					<div id="box5" className="box">
+						<h1 className="inside-box">{props.seconds4}</h1>
+					</div>
+					<div id="box6" className="box">
+						<h1 className="inside-box">{props.seconds5}</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
